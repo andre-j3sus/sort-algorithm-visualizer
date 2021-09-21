@@ -28,11 +28,14 @@ object ArrayPanel : JPanel() {
     private fun paintGrid() {
         val xCoordinate = (Frame.FRAME_WIDTH - mainArray.size * RECT_WIDTH) / 2
 
-        mainArray.forEachIndexed { idx, num ->
-            g2D.color = Color.CYAN
-            g2D.fillRect(xCoordinate + idx * RECT_WIDTH, 0, RECT_WIDTH, num)
+        mainArray.forEachIndexed { idx, element ->
+            // Draw Rect
+            g2D.color = if (element.type == ElementType.UNSORTED) Color.CYAN else Color.GREEN
+            g2D.fillRect(xCoordinate + idx * RECT_WIDTH, 0, RECT_WIDTH, element.num)
+
+            // Draw Rect Border
             g2D.color = Color.DARK_GRAY
-            g2D.drawRect(xCoordinate + idx * RECT_WIDTH, 0, RECT_WIDTH, num)
+            g2D.drawRect(xCoordinate + idx * RECT_WIDTH, 0, RECT_WIDTH, element.num)
         }
     }
 }

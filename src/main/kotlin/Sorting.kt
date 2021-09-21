@@ -18,7 +18,7 @@ object Sorting {
         "Quick Sort",
         "Heap Sort"
     )
-    private const val SORTING_DELAY = 1L
+    private const val SORTING_DELAY = 30L
 
 
     /**

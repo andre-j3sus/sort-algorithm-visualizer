@@ -1,5 +1,6 @@
 package sortingAlgorithms
 
+import Element
 import exchange
 import kotlinx.coroutines.delay
 
@@ -10,15 +11,17 @@ import kotlinx.coroutines.delay
 object SelectionSort {
 
     /**
-     * Selection Sort of an IntArray.
+     * Selection Sort of an Array.
      *
      * Time Complexity: O(n²)
      * @param a array
+     * @param delay algorithm delay
      */
-    suspend fun sort(a: IntArray, delay: Long) {
+    suspend fun sort(a: Array<Element>, delay: Long) {
         var currentIdx = 0
         for (i in a.indices) {
             exchange(a, currentIdx++, minIdx(a, i, a.lastIndex))
+            a[i].type = ElementType.SORTED
             delay(delay)
             ArrayPanel.repaint()
         }
@@ -26,17 +29,17 @@ object SelectionSort {
 
 
     /**
-     * Returns the index of the minimum element of an IntArray in a certain range.
+     * Returns the index of the minimum element of an Array in a certain range.
      *
      * Time Complexity: O(n)
      * @param a array
      * @param l minimum index
      * @param r maximum index
      */
-    private fun minIdx(a: IntArray, l: Int, r: Int): Int {
+    private fun minIdx(a: Array<Element>, l: Int, r: Int): Int {
         var minIdx = l
         for (i in l..r) {
-            if (a[i] < a[minIdx]) minIdx = i
+            if (a[i].num < a[minIdx].num) minIdx = i
         }
         return minIdx
     }
