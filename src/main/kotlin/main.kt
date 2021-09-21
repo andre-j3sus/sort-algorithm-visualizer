@@ -1,13 +1,11 @@
 
-val ARRAY_RANGE = 1..500
+// Main Array Constants
+val ARRAY_RANGE = 1..600
 const val DEFAULT_SIZE = 50
 
+// Main Array Variables
 var mainArray = intArrayOf()
 var size = DEFAULT_SIZE
-
-fun resetArray() {
-    mainArray = IntArray(size) { ARRAY_RANGE.random() }
-}
 
 
 /**

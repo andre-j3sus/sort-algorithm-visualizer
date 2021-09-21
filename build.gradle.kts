@@ -11,6 +11,9 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt")
+}
 
 
 tasks.withType<KotlinCompile>() {

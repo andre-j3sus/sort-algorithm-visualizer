@@ -1,4 +1,3 @@
-
 import java.awt.*
 import javax.swing.*
 
@@ -84,6 +83,7 @@ object Frame : JFrame() {
     fun getSelectedSortAlgo(): Sorting.SortAlgorithm {
         return when (algorithmsBox.selectedItem) {
             "Bubble Sort" -> Sorting.SortAlgorithm.BUBBLE_SORT
+            "Merge Sort" -> Sorting.SortAlgorithm.MERGE_SORT
             else -> Sorting.SortAlgorithm.BUBBLE_SORT
         }
     }

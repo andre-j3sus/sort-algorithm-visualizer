@@ -4,7 +4,10 @@ import java.awt.Graphics2D
 import javax.swing.JPanel
 
 
-object ArrayPanel : JPanel(){
+/**
+ * Array Panel with bars that represents each element of the Main Array.
+ */
+object ArrayPanel : JPanel() {
     private const val RECT_WIDTH = 10
 
     private lateinit var g2D: Graphics2D
