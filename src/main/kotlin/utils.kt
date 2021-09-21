@@ -1,8 +1,8 @@
 
 /**
- * Changes the array randomly and updates the panel.
+ * Generates another array randomly and updates the panel.
  */
-fun resetArray() {
+fun generateNewArray() {
     mainArray = IntArray(size) { ARRAY_RANGE.random() }
     ArrayPanel.repaint()
 }

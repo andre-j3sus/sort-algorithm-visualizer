@@ -13,6 +13,6 @@ var size = DEFAULT_SIZE
  * @author André Jesus.
  */
 fun main() {
-    resetArray()
+    generateNewArray()
     Frame.init()
 }

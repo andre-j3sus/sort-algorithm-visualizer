@@ -9,11 +9,13 @@ object Frame : JFrame() {
 
     // Constants.
     const val FRAME_WIDTH = 800
-    const val FRAME_HEIGHT = 800
+    private const val FRAME_HEIGHT = 800
     const val MENU_HEIGHT = 50
-    private const val BORDER_SIZE = 10
-    private const val BUTTON_BORDER = 5
+
+    private const val DEFAULT_BORDER_SIZE = 10
+    private const val BUTTON_BORDER_SIZE = 5
     private const val TITLE_FONT_SIZE = 32
+    private const val TITLE_FONT = "ARIAL"
 
     //Frame and main panels.
     private val frame = JFrame()
@@ -23,7 +25,7 @@ object Frame : JFrame() {
     private val sortingTitle = JLabel("Sorting")
     private val algorithmsBox = JComboBox(Sorting.sortAlgorithmsNames)
     private val sortBtn = JButton("Sort Array")
-    private val resetBtn = JButton("Reset Array")
+    private val generateNewArrayBtn = JButton("Generate New Array")
 
 
     /**
@@ -41,35 +43,31 @@ object Frame : JFrame() {
 
 
         // Main Commands Panel setup
-        val subtitleFont = Font("ARIAL", Font.BOLD, TITLE_FONT_SIZE)
-        val titleBorder = BorderFactory.createEmptyBorder(0, 0, 0, BORDER_SIZE)
+        val defaultBorder = BorderFactory.createEmptyBorder(0, 0, 0, DEFAULT_BORDER_SIZE)
         mainCommandsP.layout = FlowLayout()
         mainCommandsP.setBounds(0, 0, FRAME_WIDTH, MENU_HEIGHT)
 
         // Sorting Panel
-        sortingTitle.font = subtitleFont
-        sortingTitle.border = titleBorder
+        sortingTitle.font = Font(TITLE_FONT, Font.BOLD, TITLE_FONT_SIZE)
+        sortingTitle.border = defaultBorder
         mainCommandsP.add(sortingTitle)
 
-        algorithmsBox.border = BorderFactory.createEmptyBorder(0, 0, 0, BORDER_SIZE)
-        algorithmsBox.alignmentY = Component.CENTER_ALIGNMENT
+        algorithmsBox.border = defaultBorder
         mainCommandsP.add(algorithmsBox)
 
         sortBtn.addActionListener { Sorting.sortArray() }
-        sortBtn.alignmentY = Component.CENTER_ALIGNMENT
         mainCommandsP.add(sortBtn)
-        mainCommandsP.add(Box.createRigidArea(Dimension(BUTTON_BORDER, 0)))
 
-        resetBtn.alignmentY = Component.CENTER_ALIGNMENT
-        resetBtn.addActionListener { resetArray() }
-        mainCommandsP.add(resetBtn)
+        mainCommandsP.add(Box.createRigidArea(Dimension(BUTTON_BORDER_SIZE, 0))) // Separate Area
+
+        generateNewArrayBtn.addActionListener { generateNewArray() }
+        mainCommandsP.add(generateNewArrayBtn)
 
         frame.add(mainCommandsP)
 
 
         // Array Panel setup
         ArrayPanel.setBounds(0, MENU_HEIGHT, FRAME_WIDTH, FRAME_HEIGHT - MENU_HEIGHT)
-        ArrayPanel.background = Color.GREEN
         frame.add(ArrayPanel, BorderLayout.SOUTH)
 
         frame.isVisible = true
@@ -80,11 +78,15 @@ object Frame : JFrame() {
      * Returns the sort algorithm selected by the user.
      * @return sort algorithm selected by JComboBox.
      */
-    fun getSelectedSortAlgo(): Sorting.SortAlgorithm {
+    fun getSelectedSortAlgo(): Sorting.SortAlgorithm? {
         return when (algorithmsBox.selectedItem) {
             "Bubble Sort" -> Sorting.SortAlgorithm.BUBBLE_SORT
+            "Selection Sort" -> Sorting.SortAlgorithm.SELECTION_SORT
+            "Insertion Sort" -> Sorting.SortAlgorithm.INSERTION_SORT
             "Merge Sort" -> Sorting.SortAlgorithm.MERGE_SORT
-            else -> Sorting.SortAlgorithm.BUBBLE_SORT
+            "Quick Sort" -> Sorting.SortAlgorithm.QUICK_SORT
+            "Heap Sort" -> Sorting.SortAlgorithm.HEAP_SORT
+            else -> null
         }
     }
 
