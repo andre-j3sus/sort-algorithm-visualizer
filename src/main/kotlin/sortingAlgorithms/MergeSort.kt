@@ -25,6 +25,7 @@ object MergeSort {
 
         while (aIdx < a.size && bIdx < b.size) {
             newArray[currentIdx++] = if (a[aIdx].num <= b[bIdx].num) a[aIdx++] else b[bIdx++]
+            newArray[currentIdx].type = ElementType.SORTED
         }
 
         while (aIdx < a.size) {
