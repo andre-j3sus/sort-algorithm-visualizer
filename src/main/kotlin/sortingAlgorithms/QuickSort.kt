@@ -32,7 +32,7 @@ object QuickSort {
             ArrayPanel.repaint()
         }
         exchange(a, i, right)
-        a[right].type = ElementType.SORTED
+
         return i
     }
 
@@ -48,7 +48,10 @@ object QuickSort {
      */
     suspend fun sort(a: Array<Element>, left: Int, right: Int, delay: Long) {
         if (left > right) return
+
         val i = partition(a, left, right, delay)
+        a[i].type = ElementType.SORTED
+
         sort(a, left, i - 1, delay)
         sort(a, i + 1, right, delay)
     }
