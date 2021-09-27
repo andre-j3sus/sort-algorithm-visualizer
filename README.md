@@ -41,16 +41,22 @@ In the table below you can see the complexities of the different algorithms:
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in
 wrong order.
 
+![Bubble Gif](docs/bubble.gif)
+
 ### Insertion Sort
 
 Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The
 array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the
 correct position in the sorted part.
 
+![Insertion Gif](docs/insertion.gif)
+
 ### Selection Sort
 
 The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order)
 from unsorted part and putting it at the beginning.
+
+![Selection Gif](docs/selection.gif)
 
 ### Heap Sort
 
@@ -58,16 +64,21 @@ Heap sort is a comparison-based sorting technique based on Binary Heap data stru
 where we first find the minimum element and place the minimum element at the beginning. We repeat the same process for
 the remaining elements.
 
+![Heap Gif](docs/heap.gif)
+
 ### Merge Sort
 
 Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two
 halves, and then merges the two sorted halves.
 
+![Merge Gif](docs/merge.gif)
 
 ### Quick Sort
 
 Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given
 array around the picked pivot.
+
+![Quick Gif](docs/quick.gif)
 
 ---
 
