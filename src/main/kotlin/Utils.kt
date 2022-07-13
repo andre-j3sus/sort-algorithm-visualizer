@@ -1,4 +1,4 @@
-
+// ktlint-disable filename
 /**
  * Exchanges the values in the indexes in the IntArray.
  * @param a array
@@ -10,4 +10,3 @@ fun exchange(a: Array<Element>, idx1: Int, idx2: Int) {
     a[idx1] = a[idx2]
     a[idx2] = temp
 }
-

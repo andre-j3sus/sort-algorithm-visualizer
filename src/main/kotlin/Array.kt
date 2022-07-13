@@ -1,4 +1,3 @@
-
 // Main Array Constants
 val ARRAY_RANGE = 1..600
 const val DEFAULT_SIZE = 50
@@ -12,8 +11,6 @@ var size = DEFAULT_SIZE
  */
 data class Element(val num: Int, var type: ElementType)
 enum class ElementType { UNSORTED, SORTED }
-
-
 
 /**
  * Generates another array randomly and updates the panel.

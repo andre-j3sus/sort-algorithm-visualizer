@@ -1,6 +1,15 @@
-import java.awt.*
-import javax.swing.*
-
+import java.awt.BorderLayout
+import java.awt.Color
+import java.awt.Dimension
+import java.awt.FlowLayout
+import java.awt.Font
+import javax.swing.BorderFactory
+import javax.swing.Box
+import javax.swing.JButton
+import javax.swing.JComboBox
+import javax.swing.JFrame
+import javax.swing.JLabel
+import javax.swing.JPanel
 
 /**
  * Program main frame with window and menu.
@@ -17,7 +26,7 @@ object Frame : JFrame() {
     private const val TITLE_FONT_SIZE = 32
     private const val TITLE_FONT = "ARIAL"
 
-    //Frame and main panels.
+    // Frame and main panels.
     private val frame = JFrame()
     private val mainCommandsP = JPanel()
 
@@ -26,7 +35,6 @@ object Frame : JFrame() {
     private val algorithmsBox = JComboBox(Sorting.sortAlgorithmsNames)
     private val sortBtn = JButton("Sort Array")
     private val generateNewArrayBtn = JButton("Generate New Array")
-
 
     /**
      * Initializes the frame.
@@ -40,7 +48,6 @@ object Frame : JFrame() {
         frame.isResizable = false
         frame.layout = null
         frame.setLocationRelativeTo(null)
-
 
         // Main Commands Panel setup
         val defaultBorder = BorderFactory.createEmptyBorder(0, 0, 0, DEFAULT_BORDER_SIZE)
@@ -65,14 +72,12 @@ object Frame : JFrame() {
 
         frame.add(mainCommandsP)
 
-
         // Array Panel setup
         ArrayPanel.setBounds(0, MENU_HEIGHT, FRAME_WIDTH, FRAME_HEIGHT - MENU_HEIGHT)
         frame.add(ArrayPanel, BorderLayout.SOUTH)
 
         frame.isVisible = true
     }
-
 
     /**
      * Returns the sort algorithm selected by the user.
@@ -89,5 +94,4 @@ object Frame : JFrame() {
             else -> null
         }
     }
-
 }

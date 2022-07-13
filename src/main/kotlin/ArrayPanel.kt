@@ -3,7 +3,6 @@ import java.awt.Graphics
 import java.awt.Graphics2D
 import javax.swing.JPanel
 
-
 /**
  * Array Panel with bars that represents each element of the Main Array.
  */
@@ -20,7 +19,6 @@ object ArrayPanel : JPanel() {
 
         paintGrid()
     }
-
 
     /**
      * Paints the grid.

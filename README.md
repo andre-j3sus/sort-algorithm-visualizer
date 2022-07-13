@@ -26,15 +26,14 @@ I implemented six of the most known sort algorithms with different time complexi
 
 In the table below you can see the complexities of the different algorithms:
 
-| Algorithm      | Time Complexity  |
-| -------------- | -----------      |
-| Bubble Sort    | O(n^2)           |
-| Insertion Sort | O(n^2)           |
-| Selection Sort | O(n^2)           |
-| Heap Sort      | O(n(log n))      |
-| Merge Sort     | O(n(log n))      |
-| Quick Sort     | θ(n log(n))      |
-
+| Algorithm      | Time Complexity |
+|----------------|-----------------|
+| Bubble Sort    | O(n^2)          |
+| Insertion Sort | O(n^2)          |
+| Selection Sort | O(n^2)          |
+| Heap Sort      | O(n(log n))     |
+| Merge Sort     | O(n(log n))     |
+| Quick Sort     | θ(n log(n))     |
 
 ### Bubble Sort
 
@@ -86,4 +85,4 @@ array around the picked pivot.
 
 - LinkedIn - [André Jesus](https://www.linkedin.com/in/andre-jesus-engineering)
 - Twitter - [@andre_j3sus](https://twitter.com/andre_j3sus)
-- Website - [André Jesus](https://sites.google.com/view/andre-jesus/p%C3%A1gina-inicial)
+- Website - [André Jesus](https://andre-j3sus.github.io/)
